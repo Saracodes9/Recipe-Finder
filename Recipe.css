@@ -1,0 +1,220 @@
+/* General Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #eafaf1; /* Light mint green background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1em;
+}
+
+/* Container Styles */
+.container,
+#single-recipe {
+  background-color: #ffffff;
+  padding: 2em;
+  width: 90vw;
+  max-width: 32em;
+  border-radius: 0.8em;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  position: relative;
+  margin-bottom: 2em;
+}
+
+/* Detailed Recipe Container */
+#single-recipe {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(20px);
+}
+
+#single-recipe.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.search-container input,
+.search-container button {
+  font-size: 1em;
+  border-radius: 0.4em;
+  border: 2px solid #3b7a57; /* Darker green border */
+}
+
+.search-container input {
+  flex: 1;
+  padding: 0.6em;
+  border-right: none;
+}
+
+.search-container button {
+  background-color: #ff6f61; /* Soft coral color for buttons */
+  border: none;
+  color: #fff;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.search-container button:hover {
+  background-color: #e55b4e; /* Darker coral on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Meal Image */
+img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 0.8em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Details Section */
+.details {
+  background-color: #ff6f61; /* Soft coral background */
+  padding: 1em 0;
+  border-radius: 0.8em;
+  margin-top: -1.5em;
+}
+
+.details h2 {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #fff; /* White text on coral background */
+  margin-bottom: 0.3em;
+}
+
+.details h4 {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+/* Recipe Button */
+.toggle-recipe,
+.go-back {
+  font-size: 1em;
+  border: none;
+  border-radius: 0.4em;
+  padding: 1em 1.5em;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  background-color: #ff6f61;
+  color: #fff;
+  margin-top: 1.5em;
+}
+
+.toggle-recipe:hover,
+.go-back:hover {
+  background-color: #e55b4e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Recipe Section */
+#recipe,
+#single-recipe .recipe {
+  background-color: #ffffff;
+  border-radius: 0.8em;
+  padding: 2em 1.5em;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  margin-top: 2em;
+  position: relative;
+}
+
+#recipe.visible,
+#single-recipe .recipe.visible {
+  display: block;
+  opacity: 1;
+}
+
+/* Recipe Instructions */
+#recipe pre,
+#single-recipe .recipe ol {
+  background-color: #f2f7f5; /* Light mint background for instructions */
+  border-radius: 0.8em;
+  padding: 1em;
+  color: #303040;
+  text-align: left;
+  margin: 1em 0;
+  line-height: 1.6;
+}
+
+/* Ingredients List */
+#single-recipe #ingredient-con,
+ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1em 1.2em;
+  padding: 1em 0;
+  color: #303040;
+  text-transform: capitalize;
+}
+
+#single-recipe #ingredient-con ul {
+  background-color: #f2f7f5;
+  border-radius: 0.8em;
+  padding: 1em;
+  margin-top: 1em;
+}
+
+/* Error Message */
+h3 {
+  margin-top: 2em;
+  color: #3b7a57; /* Darker mint color for error messages */
+}
+
+/* Copy Recipe Button */
+.copy-recipe {
+  font-size: 1em;
+  border: none;
+  border-radius: 0.4em;
+  padding: 0.8em 1.2em;
+  cursor: pointer;
+  background-color: #ff6f61;
+  color: #fff;
+  margin-top: 1em;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.copy-recipe:hover {
+  background-color: #e55b4e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 500px) {
+  .container,
+  #single-recipe {
+    font-size: 14px;
+    padding: 2em;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-container input,
+  .search-container button {
+    width: 100%;
+  }
+}
